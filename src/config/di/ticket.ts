@@ -1,5 +1,5 @@
-import { DeleteTicket } from "/src/useCase/ticket/DeleteTicket";
-import { GetAllTickets } from "/src/useCase/ticket/GetAllTickets";
+import { DeleteTicket } from "/src/application/useCase/ticket/DeleteTicket";
+import { GetAllTickets } from "/src/application/useCase/ticket/GetAllTickets";
 import { TicketRepositoryToken } from "/src/domain/di/token/ticket";
 import { TicketApiRepository } from "/src/infrastructure/api/ticket/TicketApiRepository";
 

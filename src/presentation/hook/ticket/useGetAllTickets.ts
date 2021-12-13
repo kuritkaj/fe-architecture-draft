@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "../query/useQuery";
 import { getService } from "/src/config/di";
-import { GetAllTickets } from "/src/useCase/ticket/GetAllTickets";
+import { GetAllTickets } from "/src/application/useCase/ticket/GetAllTickets";
 
 const queryKey = ["getAllTickets"];
 

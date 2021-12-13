@@ -1,7 +1,7 @@
 import { useMutation } from "../query/useQuery";
 import { getService } from "/src/config/di";
 import { TicketId } from "/src/domain/struct/ticket/Ticket";
-import { DeleteTicket } from "/src/useCase/ticket/DeleteTicket";
+import { DeleteTicket } from "/src/application/useCase/ticket/DeleteTicket";
 import { useGetAllTicketsInvalidate } from "/src/presentation/hook/ticket/useGetAllTickets";
 
 export const useDeleteTicket = () => {
