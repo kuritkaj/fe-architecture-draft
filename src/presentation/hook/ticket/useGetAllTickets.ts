@@ -1,8 +1,9 @@
 import { useQuery, useQueryClient } from "../query/useQuery";
 import { getService } from "/src/config/di";
 import { GetAllTickets } from "/src/application/useCase/ticket/GetAllTickets";
+import { queryKeys } from "/src/presentation/hook/query/queryKeys";
 
-const queryKey = ["getAllTickets"];
+const queryKey = queryKeys.ticket.list();
 
 export const useGetAllTickets = () => {
   const getAllTickets = getService(GetAllTickets);
