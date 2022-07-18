@@ -3,11 +3,11 @@ import { TicketId } from "/src/domain/struct/ticket/Ticket";
 import { useCallback } from "react";
 
 export const useTicketListItemController = (id: TicketId) => {
-  const deleteTicket = useDeleteTicket();
+  const { deleteTicket } = useDeleteTicket();
 
-  const onDelete = useCallback(() => deleteTicket(id), [id]);
+  const handleDelete = useCallback(() => deleteTicket(id), [id]);
 
   return {
-    onDelete
+    handleDelete
   };
 };

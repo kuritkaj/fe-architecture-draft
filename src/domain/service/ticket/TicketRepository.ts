@@ -1,6 +1,6 @@
-import { Ticket, TicketId } from "/src/domain/struct/ticket/Ticket";
+import { TicketId, TicketList } from "/src/domain/struct/ticket/Ticket";
 
 export interface TicketRepository {
-  getAllTickets(): Promise<Ticket[]>;
+  getAllTickets(): Promise<TicketList>;
   deleteTicket(id: TicketId): Promise<void>;
 }

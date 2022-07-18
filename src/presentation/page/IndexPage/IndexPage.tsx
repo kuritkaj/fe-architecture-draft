@@ -3,7 +3,7 @@ import { TicketList } from "/src/presentation/component/ticket/TicketList/Ticket
 import { Layout } from "/src/presentation/component/designSystem/Layout/Layout";
 import { Title } from "/src/presentation/component/designSystem/Typography/Typography";
 
-export const IndexPage: React.FC = React.memo(() => (
+export const IndexPage: React.FC = () => (
   <div>
     <Layout>
       <Layout.Header>
@@ -14,4 +14,4 @@ export const IndexPage: React.FC = React.memo(() => (
       </Layout.Content>
     </Layout>
   </div>
-));
+);

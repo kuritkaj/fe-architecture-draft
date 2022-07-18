@@ -1,12 +1,12 @@
 import { Inject, Injectable } from "/src/lib/di/di";
 import { HttpClient } from "/src/infrastructure/service/http/HttpClient";
 import { TicketRepository } from "/src/domain/service/ticket/TicketRepository";
-import { Ticket, TicketId } from "/src/domain/struct/ticket/Ticket";
+import { TicketId, TicketList } from "/src/domain/struct/ticket/Ticket";
 import { TicketApiMapper } from "./TicketApiMapper";
 
 @Injectable()
 export class TicketApiRepository implements TicketRepository {
-  private tickets: Ticket[] = [];
+  private tickets: TicketList = [];
 
   constructor(@Inject(HttpClient) protected httpClient: HttpClient) {
     this.tickets = Array.from(new Array(10)).map((value, index) => ({
@@ -16,7 +16,7 @@ export class TicketApiRepository implements TicketRepository {
     }));
   }
 
-  getAllTickets(): Promise<Ticket[]> {
+  getAllTickets(): Promise<TicketList> {
     // In a normal situation we will use TicketApiMapper to map the response entity to our domain entity
     return new Promise((resolve) => {
       setTimeout(() => {

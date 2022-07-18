@@ -1,17 +1,10 @@
-import { useGetAllTickets } from "/src/presentation/hook/ticket/useGetAllTickets";
-import { useEffect } from "react";
-import { useDeleteTicket } from "/src/presentation/hook/ticket/useDeleteTicket";
+import { useTicketList } from "/src/presentation/hook/ticket/useTicketList";
 
 export const useTicketListController = () => {
-  const { isLoading, isRefetching, isError, data } = useGetAllTickets();
-
-  useEffect(() => {
-    // display error notification
-  }, [isError]);
+  const { isLoading, isRefetching, data } = useTicketList();
 
   return {
     isLoading: isLoading || isRefetching,
-    isError,
     tickets: data
   };
 };

@@ -5,16 +5,18 @@ import { queryKeys } from "/src/presentation/hook/query/queryKeys";
 
 const queryKey = queryKeys.ticket.list();
 
-export const useGetAllTickets = () => {
+export const useTicketList = () => {
   const getAllTickets = getService(GetAllTickets);
 
   return useQuery(queryKey, () => getAllTickets.invoke());
 };
 
-export const useGetAllTicketsInvalidate = () => {
+export const useInvalidateTicketList = () => {
   const client = useQueryClient();
 
-  return () => {
-    client.invalidateQueries(queryKey);
+  return {
+    invalidateTicketList() {
+      client.invalidateQueries(queryKey);
+    }
   };
 };
