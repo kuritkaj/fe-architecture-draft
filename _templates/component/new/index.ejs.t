@@ -12,10 +12,8 @@ export interface <%= propsInterfaceName %> {
 
 }
 
-export const <%= Name %>: React.FC<<%= propsInterfaceName %>> = React.memo(({}: <%= propsInterfaceName %>) => {
+export const <%= Name %>: React.FC<<%= propsInterfaceName %>> = ({}: <%= propsInterfaceName %>) => {
     const { } = <%= controllerName %>();
 
     return <></>;
-});
-
-
+};
