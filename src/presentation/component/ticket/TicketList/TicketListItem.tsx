@@ -1,8 +1,7 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Ticket, TicketId } from "/src/domain/struct/ticket/Ticket";
-import { Button } from "/src/presentation/component/designSystem/Button/Button";
 import { List } from "/src/presentation/component/designSystem/List/List";
-import { useTicketListItemController } from "/src/presentation/component/ticket/TicketList/useTicketListItemController";
+import { DeleteTicketButton } from "/src/presentation/component/ticket/TicketList/DeleteTicketButton";
 
 export interface TicketListItemProps {
   id: TicketId;
@@ -15,16 +14,7 @@ export const TicketListItem: React.FC<TicketListItemProps> = ({
   title,
   text
 }) => {
-  const { handleDelete } = useTicketListItemController(id);
-
-  const actions = useMemo(
-    () => [
-      <Button key="delete" type="link" onClick={handleDelete}>
-        Delete
-      </Button>
-    ],
-    [handleDelete]
-  );
+  const actions = [<DeleteTicketButton id={id} />];
 
   return (
     <List.Item key={id} actions={actions}>
